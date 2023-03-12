@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'auth_user.dart' as auth_user;
-import 'user.dart';
+import 'user.dart' as user_import_prefix;
 
 part 'main.g.dart';
 
 @riverpod
-auth_user.User user(UserRef ref) {
-  return auth_user.User("id");
+user_import_prefix.User user(UserRef ref) {
+  return user_import_prefix.User("id");
 }
 
 @riverpod
-Stream<auth_user.User> userStream(UserStreamRef ref) {
-  // return dummy stream
-  return Stream.value(auth_user.User("id"));
+Stream<user_import_prefix.User> userStream(UserStreamRef ref) {
+  return Stream.value(user_import_prefix.User("id"));
 }
 
 void main() {
